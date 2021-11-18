@@ -38,17 +38,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface BackupStatus {
+open class BackupStatus (
 
     @get:JsonProperty("backupInProgress")
-    val backupInProgress: kotlin.Boolean?
+    val backupInProgress: kotlin.Boolean? = null,
     @get:JsonProperty("backupCancelled")
-    val backupCancelled: kotlin.Boolean?
+    val backupCancelled: kotlin.Boolean? = null,
     @get:JsonProperty("backupError")
-    val backupError: BackupError?
+    val backupError: BackupError? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

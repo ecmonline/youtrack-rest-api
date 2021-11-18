@@ -38,19 +38,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface LocaleDescriptor {
+open class LocaleDescriptor (
 
     @get:JsonProperty("locale")
-    val locale: kotlin.String?
+    val locale: kotlin.String? = null,
     @get:JsonProperty("language")
-    val language: kotlin.String?
+    val language: kotlin.String? = null,
     @get:JsonProperty("community")
-    val community: kotlin.Boolean?
+    val community: kotlin.Boolean? = null,
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

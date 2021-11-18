@@ -36,15 +36,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface WorkItemType {
+open class WorkItemType (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("autoAttached")
-    val autoAttached: kotlin.Boolean?
+    val autoAttached: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

@@ -45,5 +45,5 @@ data class FieldBasedColorCoding (
     @field:JsonProperty("prototype")
     val prototype: CustomField? = null
 
-) : ColorCoding
+) : ColorCoding(id, dollarType)
 

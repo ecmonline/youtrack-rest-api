@@ -36,11 +36,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = AgileColumnFieldValue::class, name = "AgileColumnFieldValue"),
     JsonSubTypes.Type(value = SwimlaneEntityAttributeValue::class, name = "SwimlaneEntityAttributeValue")
 )
-interface DatabaseAttributeValue {
+open class DatabaseAttributeValue (
 
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

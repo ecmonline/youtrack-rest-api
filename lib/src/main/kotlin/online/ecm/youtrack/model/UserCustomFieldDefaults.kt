@@ -67,5 +67,5 @@ data class UserCustomFieldDefaults (
     @field:JsonProperty("defaultValues")
     val defaultValues: kotlin.collections.List<User>? = null
 
-) : CustomFieldDefaults
+) : CustomFieldDefaults(canBeEmpty, emptyFieldText, isPublic, parent, id, dollarType)
 

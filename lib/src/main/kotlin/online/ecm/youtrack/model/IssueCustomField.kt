@@ -53,11 +53,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = StateIssueCustomField::class, name = "StateIssueCustomField"),
     JsonSubTypes.Type(value = TextIssueCustomField::class, name = "TextIssueCustomField")
 )
-interface IssueCustomField {
+open class IssueCustomField (
 
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

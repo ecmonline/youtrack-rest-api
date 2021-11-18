@@ -36,11 +36,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = CommandLimitedVisibility::class, name = "CommandLimitedVisibility"),
     JsonSubTypes.Type(value = CommandUnlimitedVisibility::class, name = "CommandUnlimitedVisibility")
 )
-interface CommandVisibility {
+open class CommandVisibility (
 
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

@@ -69,5 +69,5 @@ open class SimpleProjectCustomField (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : ProjectCustomField
+) : ProjectCustomField(field, project, canBeEmpty, emptyFieldText, ordinal, isPublic, hasRunningJob, id, dollarType)
 

@@ -38,19 +38,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface AgileStatus {
+open class AgileStatus (
 
     @get:JsonProperty("valid")
-    val valid: kotlin.Boolean?
+    val valid: kotlin.Boolean? = null,
     @get:JsonProperty("hasJobs")
-    val hasJobs: kotlin.Boolean?
+    val hasJobs: kotlin.Boolean? = null,
     @get:JsonProperty("errors")
-    val errors: kotlin.String?
+    val errors: kotlin.String? = null,
     @get:JsonProperty("warnings")
-    val warnings: kotlin.String?
+    val warnings: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

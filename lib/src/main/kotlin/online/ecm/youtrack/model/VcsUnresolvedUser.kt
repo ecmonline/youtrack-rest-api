@@ -95,5 +95,20 @@ data class VcsUnresolvedUser (
     @field:JsonProperty("name")
     val name: kotlin.String? = null
 
-) : User
+) : User(
+    login,
+    fullName,
+    email,
+    jabberAccountName,
+    ringId,
+    guest,
+    online,
+    banned,
+    tags,
+    savedQueries,
+    avatarUrl,
+    profiles,
+    id,
+    dollarType
+)
 

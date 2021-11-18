@@ -70,5 +70,5 @@ open class LocalizableBundleElement (
     @field:JsonProperty("localizedName")
     open val localizedName: kotlin.String? = null
 
-) : BundleElement
+) : BundleElement(name, bundle, description, ordinal, color, hasRunningJob, id, dollarType)
 

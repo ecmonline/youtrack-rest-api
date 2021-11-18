@@ -43,5 +43,5 @@ open class BaseBundle (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : Bundle
+) : Bundle(isUpdateable, id, dollarType)
 

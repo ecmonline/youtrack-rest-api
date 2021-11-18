@@ -58,57 +58,57 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface Telemetry {
+open class Telemetry (
 
     @get:JsonProperty("installationFolder")
-    val installationFolder: kotlin.String?
+    val installationFolder: kotlin.String? = null,
     @get:JsonProperty("databaseLocation")
-    val databaseLocation: kotlin.String?
+    val databaseLocation: kotlin.String? = null,
     @get:JsonProperty("logsLocation")
-    val logsLocation: kotlin.String?
+    val logsLocation: kotlin.String? = null,
     @get:JsonProperty("availableProcessors")
-    val availableProcessors: kotlin.Int?
+    val availableProcessors: kotlin.Int? = null,
     @get:JsonProperty("availableMemory")
-    val availableMemory: kotlin.String?
+    val availableMemory: kotlin.String? = null,
     @get:JsonProperty("allocatedMemory")
-    val allocatedMemory: kotlin.String?
+    val allocatedMemory: kotlin.String? = null,
     @get:JsonProperty("usedMemory")
-    val usedMemory: kotlin.String?
+    val usedMemory: kotlin.String? = null,
     @get:JsonProperty("uptime")
-    val uptime: kotlin.String?
+    val uptime: kotlin.String? = null,
     @get:JsonProperty("startedTime")
-    val startedTime: kotlin.Long?
+    val startedTime: kotlin.Long? = null,
     @get:JsonProperty("databaseBackgroundThreads")
-    val databaseBackgroundThreads: kotlin.Int?
+    val databaseBackgroundThreads: kotlin.Int? = null,
     @get:JsonProperty("pendingAsyncJobs")
-    val pendingAsyncJobs: kotlin.Int?
+    val pendingAsyncJobs: kotlin.Int? = null,
     @get:JsonProperty("cachedResultsCountInDBQueriesCache")
-    val cachedResultsCountInDBQueriesCache: kotlin.Int?
+    val cachedResultsCountInDBQueriesCache: kotlin.Int? = null,
     @get:JsonProperty("databaseQueriesCacheHitRate")
-    val databaseQueriesCacheHitRate: kotlin.String?
+    val databaseQueriesCacheHitRate: kotlin.String? = null,
     @get:JsonProperty("blobStringsCacheHitRate")
-    val blobStringsCacheHitRate: kotlin.String?
+    val blobStringsCacheHitRate: kotlin.String? = null,
     @get:JsonProperty("totalTransactions")
-    val totalTransactions: kotlin.Long?
+    val totalTransactions: kotlin.Long? = null,
     @get:JsonProperty("transactionsPerSecond")
-    val transactionsPerSecond: kotlin.String?
+    val transactionsPerSecond: kotlin.String? = null,
     @get:JsonProperty("requestsPerSecond")
-    val requestsPerSecond: kotlin.String?
+    val requestsPerSecond: kotlin.String? = null,
     @get:JsonProperty("databaseSize")
-    val databaseSize: kotlin.String?
+    val databaseSize: kotlin.String? = null,
     @get:JsonProperty("fullDatabaseSize")
-    val fullDatabaseSize: kotlin.String?
+    val fullDatabaseSize: kotlin.String? = null,
     @get:JsonProperty("textIndexSize")
-    val textIndexSize: kotlin.String?
+    val textIndexSize: kotlin.String? = null,
     @get:JsonProperty("onlineUsers")
-    val onlineUsers: OnlineUsers?
+    val onlineUsers: OnlineUsers? = null,
     @get:JsonProperty("reportCalculatorThreads")
-    val reportCalculatorThreads: kotlin.Int?
+    val reportCalculatorThreads: kotlin.Int? = null,
     @get:JsonProperty("notificationAnalyzerThreads")
-    val notificationAnalyzerThreads: kotlin.Int?
+    val notificationAnalyzerThreads: kotlin.Int? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

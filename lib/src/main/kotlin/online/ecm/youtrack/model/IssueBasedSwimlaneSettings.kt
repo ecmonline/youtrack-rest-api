@@ -58,5 +58,5 @@ data class IssueBasedSwimlaneSettings (
     @field:JsonProperty("values")
     val propertyValues: kotlin.collections.List<SwimlaneValue>? = null
 
-) : SwimlaneSettings
+) : SwimlaneSettings(enabled, id, dollarType)
 

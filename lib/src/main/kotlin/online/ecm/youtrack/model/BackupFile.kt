@@ -38,19 +38,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface BackupFile {
+open class BackupFile (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("size")
-    val propertySize: kotlin.Long?
+    val propertySize: kotlin.Long? = null,
     @get:JsonProperty("creationDate")
-    val creationDate: kotlin.Long?
+    val creationDate: kotlin.Long? = null,
     @get:JsonProperty("link")
-    val link: kotlin.String?
+    val link: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

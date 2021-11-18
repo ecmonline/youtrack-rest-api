@@ -43,29 +43,29 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface IssueLinkType {
+open class IssueLinkType (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("localizedName")
-    val localizedName: kotlin.String?
+    val localizedName: kotlin.String? = null,
     @get:JsonProperty("sourceToTarget")
-    val sourceToTarget: kotlin.String?
+    val sourceToTarget: kotlin.String? = null,
     @get:JsonProperty("localizedSourceToTarget")
-    val localizedSourceToTarget: kotlin.String?
+    val localizedSourceToTarget: kotlin.String? = null,
     @get:JsonProperty("targetToSource")
-    val targetToSource: kotlin.String?
+    val targetToSource: kotlin.String? = null,
     @get:JsonProperty("localizedTargetToSource")
-    val localizedTargetToSource: kotlin.String?
+    val localizedTargetToSource: kotlin.String? = null,
     @get:JsonProperty("directed")
-    val directed: kotlin.Boolean?
+    val directed: kotlin.Boolean? = null,
     @get:JsonProperty("aggregation")
-    val aggregation: kotlin.Boolean?
+    val aggregation: kotlin.Boolean? = null,
     @get:JsonProperty("readOnly")
-    val readOnly: kotlin.Boolean?
+    val readOnly: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

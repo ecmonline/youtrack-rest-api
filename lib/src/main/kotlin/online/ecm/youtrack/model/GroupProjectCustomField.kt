@@ -75,5 +75,5 @@ data class GroupProjectCustomField (
     @field:JsonProperty("defaultValues")
     val defaultValues: kotlin.collections.List<UserGroup>? = null
 
-) : ProjectCustomField
+) : ProjectCustomField(field, project, canBeEmpty, emptyFieldText, ordinal, isPublic, hasRunningJob, id, dollarType)
 

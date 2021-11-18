@@ -60,11 +60,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = WorkItemDurationActivityItem::class, name = "WorkItemDurationActivityItem"),
     JsonSubTypes.Type(value = WorkItemTypeActivityItem::class, name = "WorkItemTypeActivityItem")
 )
-interface ActivityItem {
+open class ActivityItem (
 
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

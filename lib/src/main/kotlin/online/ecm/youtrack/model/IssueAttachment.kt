@@ -55,45 +55,45 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface IssueAttachment {
+open class IssueAttachment (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("author")
-    val author: User?
+    val author: User? = null,
     @get:JsonProperty("created")
-    val created: kotlin.Long?
+    val created: kotlin.Long? = null,
     @get:JsonProperty("updated")
-    val updated: kotlin.Long?
+    val updated: kotlin.Long? = null,
     @get:JsonProperty("size")
-    val propertySize: kotlin.Long?
+    val propertySize: kotlin.Long? = null,
     @get:JsonProperty("extension")
-    val extension: kotlin.String?
+    val extension: kotlin.String? = null,
     @get:JsonProperty("charset")
-    val charset: kotlin.String?
+    val charset: kotlin.String? = null,
     @get:JsonProperty("mimeType")
-    val mimeType: kotlin.String?
+    val mimeType: kotlin.String? = null,
     @get:JsonProperty("metaData")
-    val metaData: kotlin.String?
+    val metaData: kotlin.String? = null,
     @get:JsonProperty("draft")
-    val draft: kotlin.Boolean?
+    val draft: kotlin.Boolean? = null,
     @get:JsonProperty("removed")
-    val removed: kotlin.Boolean?
+    val removed: kotlin.Boolean? = null,
     @get:JsonProperty("base64Content")
-    val base64Content: kotlin.String?
+    val base64Content: kotlin.String? = null,
     @get:JsonProperty("url")
-    val url: kotlin.String?
+    val url: kotlin.String? = null,
     @get:JsonProperty("visibility")
-    val visibility: Visibility?
+    val visibility: Visibility? = null,
     @get:JsonProperty("issue")
-    val issue: Issue?
+    val issue: Issue? = null,
     @get:JsonProperty("comment")
-    val comment: IssueComment?
+    val comment: IssueComment? = null,
     @get:JsonProperty("thumbnailURL")
-    val thumbnailURL: kotlin.String?
+    val thumbnailURL: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

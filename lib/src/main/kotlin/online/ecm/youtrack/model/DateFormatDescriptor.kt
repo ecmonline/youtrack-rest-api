@@ -37,17 +37,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface DateFormatDescriptor {
+open class DateFormatDescriptor (
 
     @get:JsonProperty("presentation")
-    val presentation: kotlin.String?
+    val presentation: kotlin.String? = null,
     @get:JsonProperty("pattern")
-    val pattern: kotlin.String?
+    val pattern: kotlin.String? = null,
     @get:JsonProperty("datePattern")
-    val datePattern: kotlin.String?
+    val datePattern: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

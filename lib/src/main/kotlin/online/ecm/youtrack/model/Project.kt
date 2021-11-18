@@ -99,5 +99,5 @@ data class Project (
     @field:JsonProperty("team")
     val team: UserGroup? = null
 
-) : IssueFolder
+) : IssueFolder(name, id, dollarType)
 

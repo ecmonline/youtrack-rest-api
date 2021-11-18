@@ -48,5 +48,5 @@ data class AgileColumnFieldValue (
     @field:JsonProperty("isResolved")
     val isResolved: kotlin.Boolean? = null
 
-) : DatabaseAttributeValue
+) : DatabaseAttributeValue(id, dollarType)
 

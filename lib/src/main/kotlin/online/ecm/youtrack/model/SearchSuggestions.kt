@@ -41,21 +41,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface SearchSuggestions {
+open class SearchSuggestions (
 
     @get:JsonProperty("caret")
-    val caret: kotlin.Int?
+    val caret: kotlin.Int? = null,
     @get:JsonProperty("ignoreUnresolvedSetting")
-    val ignoreUnresolvedSetting: kotlin.Boolean?
+    val ignoreUnresolvedSetting: kotlin.Boolean? = null,
     @get:JsonProperty("query")
-    val query: kotlin.String?
+    val query: kotlin.String? = null,
     @get:JsonProperty("suggestions")
-    val suggestions: kotlin.collections.List<Suggestion>?
+    val suggestions: kotlin.collections.List<Suggestion>? = null,
     @get:JsonProperty("folders")
-    val folders: kotlin.collections.List<IssueFolder>?
+    val folders: kotlin.collections.List<IssueFolder>? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

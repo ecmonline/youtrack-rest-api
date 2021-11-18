@@ -37,13 +37,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = CustomFilterField::class, name = "CustomFilterField"),
     JsonSubTypes.Type(value = PredefinedFilterField::class, name = "PredefinedFilterField")
 )
-interface FilterField {
+open class FilterField (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    open val name: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

@@ -41,23 +41,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface UserGroup {
+open class UserGroup (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("ringId")
-    val ringId: kotlin.String?
+    val ringId: kotlin.String? = null,
     @get:JsonProperty("usersCount")
-    val usersCount: kotlin.Long?
+    val usersCount: kotlin.Long? = null,
     @get:JsonProperty("icon")
-    val icon: kotlin.String?
+    val icon: kotlin.String? = null,
     @get:JsonProperty("allUsersGroup")
-    val allUsersGroup: kotlin.Boolean?
+    val allUsersGroup: kotlin.Boolean? = null,
     @get:JsonProperty("teamForProject")
-    val teamForProject: Project?
+    val teamForProject: Project? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

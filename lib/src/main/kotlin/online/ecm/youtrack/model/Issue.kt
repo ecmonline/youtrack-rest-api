@@ -71,67 +71,66 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
-    JsonSubTypes.Type(value = IssueImpl::class, name = "Issue")
 )
-interface Issue {
+open class Issue (
 
     @get:JsonProperty("idReadable")
-    val idReadable: kotlin.String?
+    open val idReadable: kotlin.String? = null,
     @get:JsonProperty("created")
-    val created: kotlin.Long?
+    open val created: kotlin.Long? = null,
     @get:JsonProperty("updated")
-    val updated: kotlin.Long?
+    open val updated: kotlin.Long? = null,
     @get:JsonProperty("resolved")
-    val resolved: kotlin.Long?
+    val resolved: kotlin.Long? = null,
     @get:JsonProperty("numberInProject")
-    val numberInProject: kotlin.Long?
+    val numberInProject: kotlin.Long? = null,
     @get:JsonProperty("project")
-    val project: Project?
+    val project: Project? = null,
     @get:JsonProperty("summary")
-    val summary: kotlin.String?
+    val summary: kotlin.String? = null,
     @get:JsonProperty("description")
-    val description: kotlin.String?
+    val description: kotlin.String? = null,
     @get:JsonProperty("usesMarkdown")
-    val usesMarkdown: kotlin.Boolean?
+    val usesMarkdown: kotlin.Boolean? = null,
     @get:JsonProperty("wikifiedDescription")
-    val wikifiedDescription: kotlin.String?
+    val wikifiedDescription: kotlin.String? = null,
     @get:JsonProperty("reporter")
-    val reporter: User?
+    val reporter: User? = null,
     @get:JsonProperty("updater")
-    val updater: User?
+    val updater: User? = null,
     @get:JsonProperty("draftOwner")
-    val draftOwner: User?
+    val draftOwner: User? = null,
     @get:JsonProperty("isDraft")
-    val isDraft: kotlin.Boolean?
+    val isDraft: kotlin.Boolean? = null,
     @get:JsonProperty("visibility")
-    val visibility: Visibility?
+    val visibility: Visibility? = null,
     @get:JsonProperty("votes")
-    val votes: kotlin.Int?
+    val votes: kotlin.Int? = null,
     @get:JsonProperty("comments")
-    val comments: kotlin.collections.List<IssueComment>?
+    val comments: kotlin.collections.List<IssueComment>? = null,
     @get:JsonProperty("commentsCount")
-    val commentsCount: kotlin.Int?
+    val commentsCount: kotlin.Int? = null,
     @get:JsonProperty("tags")
-    val tags: kotlin.collections.List<IssueTag>?
+    val tags: kotlin.collections.List<IssueTag>? = null,
     @get:JsonProperty("links")
-    val links: kotlin.collections.List<IssueLink>?
+    val links: kotlin.collections.List<IssueLink>? = null,
     @get:JsonProperty("externalIssue")
-    val externalIssue: ExternalIssue?
+    val externalIssue: ExternalIssue? = null,
     @get:JsonProperty("customFields")
-    val customFields: kotlin.collections.List<IssueCustomField>?
+    val customFields: kotlin.collections.List<IssueCustomField>? = null,
     @get:JsonProperty("voters")
-    val voters: IssueVoters?
+    val voters: IssueVoters? = null,
     @get:JsonProperty("watchers")
-    val watchers: IssueWatchers?
+    val watchers: IssueWatchers? = null,
     @get:JsonProperty("attachments")
-    val attachments: kotlin.collections.List<IssueAttachment>?
+    val attachments: kotlin.collections.List<IssueAttachment>? = null,
     @get:JsonProperty("subtasks")
-    val subtasks: IssueLink?
+    val subtasks: IssueLink? = null,
     @get:JsonProperty("parent")
-    val parent: IssueLink?
+    val parent: IssueLink? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

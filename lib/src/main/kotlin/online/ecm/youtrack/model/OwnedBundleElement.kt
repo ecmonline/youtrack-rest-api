@@ -71,5 +71,5 @@ data class OwnedBundleElement (
     @field:JsonProperty("owner")
     val owner: User? = null
 
-) : BundleElement
+) : BundleElement(name, bundle, description, ordinal, color, hasRunningJob, id, dollarType)
 

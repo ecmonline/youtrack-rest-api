@@ -41,23 +41,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface ActivityCursorPage {
+open class ActivityCursorPage (
 
     @get:JsonProperty("reverse")
-    val reverse: kotlin.Boolean?
+    val reverse: kotlin.Boolean? = null,
     @get:JsonProperty("beforeCursor")
-    val beforeCursor: kotlin.String?
+    val beforeCursor: kotlin.String? = null,
     @get:JsonProperty("afterCursor")
-    val afterCursor: kotlin.String?
+    val afterCursor: kotlin.String? = null,
     @get:JsonProperty("hasBefore")
-    val hasBefore: kotlin.Boolean?
+    val hasBefore: kotlin.Boolean? = null,
     @get:JsonProperty("hasAfter")
-    val hasAfter: kotlin.Boolean?
+    val hasAfter: kotlin.Boolean? = null,
     @get:JsonProperty("activities")
-    val activities: kotlin.collections.List<ActivityItem>?
+    val activities: kotlin.collections.List<ActivityItem>? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

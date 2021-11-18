@@ -40,29 +40,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface IssueLink {
+open class IssueLink (
 
     @get:JsonProperty("direction")
-    val direction: IssueLink.Direction?
+    val direction: Direction? = null,
     @get:JsonProperty("linkType")
-    val linkType: IssueLinkType?
+    val linkType: IssueLinkType? = null,
     @get:JsonProperty("issues")
-    val issues: kotlin.collections.List<Issue>?
+    val issues: kotlin.collections.List<Issue>? = null,
     @get:JsonProperty("trimmedIssues")
-    val trimmedIssues: kotlin.collections.List<Issue>?
+    val trimmedIssues: kotlin.collections.List<Issue>? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-    /**
-     * 
-     *
-     * Values: oUTWARD,iNWARD,bOTH
-     */
-    enum class Direction(val value: kotlin.String) {
-        @JsonProperty(value = "OUTWARD") oUTWARD("OUTWARD"),
-        @JsonProperty(value = "INWARD") iNWARD("INWARD"),
-        @JsonProperty(value = "BOTH") bOTH("BOTH");
-    }
-}
+    val dollarType: kotlin.String? = null
+)
 

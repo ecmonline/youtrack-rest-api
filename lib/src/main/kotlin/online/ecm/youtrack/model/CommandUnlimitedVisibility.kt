@@ -39,5 +39,5 @@ data class CommandUnlimitedVisibility (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : CommandVisibility
+) : CommandVisibility(id, dollarType)
 

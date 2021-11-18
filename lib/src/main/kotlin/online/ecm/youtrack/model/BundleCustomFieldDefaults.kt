@@ -56,5 +56,5 @@ open class BundleCustomFieldDefaults (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : CustomFieldDefaults
+) : CustomFieldDefaults(canBeEmpty, emptyFieldText, isPublic, parent, id, dollarType)
 

@@ -3,9 +3,13 @@ package online.ecm.youtrack
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import online.ecm.youtrack.model.*
+import org.apache.http.client.methods.HttpDelete
 import org.apache.http.client.methods.HttpGet
+import org.apache.http.client.methods.HttpPost
 import org.apache.http.client.methods.HttpRequestBase
 import org.apache.http.client.utils.URIBuilder
+import org.apache.http.entity.ContentType
+import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.message.BasicNameValuePair
 import org.apache.http.util.EntityUtils
@@ -1092,7 +1096,17 @@ class YoutrackApi(val youtrackApiConfig: YoutrackApiConfig) : YoutrackApiInterfa
         val apiPath = youtrackApiConfig.apiPath
         requestConfig.headers["Authorization"] = "Bearer ${youtrackApiConfig.authToken}"
 
-        val request = HttpGet(baseUrl)
+        val request = when (requestConfig.method) {
+            RequestMethod.GET -> HttpGet(baseUrl)
+            RequestMethod.POST -> {
+                val httpRequest = HttpPost(baseUrl)
+                val jsonRequestString = mapper.writeValueAsString(requestConfig.body)
+                httpRequest.entity = StringEntity(jsonRequestString, ContentType.APPLICATION_JSON)
+                httpRequest
+            }
+            RequestMethod.DELETE -> HttpDelete(baseUrl)
+            else -> throw Exception("Request type ${requestConfig.method} not supported")
+        }
 
         val parameters = requestConfig.query.flatMap { query ->
             query.value.map { queryValue ->

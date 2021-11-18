@@ -50,5 +50,5 @@ data class CommandLimitedVisibility (
     @field:JsonProperty("permittedUsers")
     val permittedUsers: kotlin.collections.List<User>? = null
 
-) : CommandVisibility
+) : CommandVisibility(id, dollarType)
 

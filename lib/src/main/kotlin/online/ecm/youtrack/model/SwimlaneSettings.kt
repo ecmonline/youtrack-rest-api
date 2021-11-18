@@ -37,13 +37,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = AttributeBasedSwimlaneSettings::class, name = "AttributeBasedSwimlaneSettings"),
     JsonSubTypes.Type(value = IssueBasedSwimlaneSettings::class, name = "IssueBasedSwimlaneSettings")
 )
-interface SwimlaneSettings {
+open class SwimlaneSettings (
 
     @get:JsonProperty("enabled")
-    val enabled: kotlin.Boolean?
+    open val enabled: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

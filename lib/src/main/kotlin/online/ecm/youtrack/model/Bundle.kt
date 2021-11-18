@@ -42,13 +42,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = UserBundle::class, name = "UserBundle"),
     JsonSubTypes.Type(value = VersionBundle::class, name = "VersionBundle")
 )
-interface Bundle {
+open class Bundle (
 
     @get:JsonProperty("isUpdateable")
-    val isUpdateable: kotlin.Boolean?
+    open val isUpdateable: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

@@ -39,5 +39,5 @@ data class UnlimitedVisibility (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : Visibility
+) : Visibility(id, dollarType)
 

@@ -46,31 +46,31 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface Sprint {
+open class Sprint (
 
     @get:JsonProperty("agile")
-    val agile: Agile?
+    val agile: Agile? = null,
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("goal")
-    val goal: kotlin.String?
+    val goal: kotlin.String? = null,
     @get:JsonProperty("start")
-    val start: kotlin.Long?
+    val start: kotlin.Long? = null,
     @get:JsonProperty("finish")
-    val finish: kotlin.Long?
+    val finish: kotlin.Long? = null,
     @get:JsonProperty("archived")
-    val archived: kotlin.Boolean?
+    val archived: kotlin.Boolean? = null,
     @get:JsonProperty("isDefault")
-    val isDefault: kotlin.Boolean?
+    val isDefault: kotlin.Boolean? = null,
     @get:JsonProperty("issues")
-    val issues: kotlin.collections.List<Issue>?
+    val issues: kotlin.collections.List<Issue>? = null,
     @get:JsonProperty("unresolvedIssuesCount")
-    val unresolvedIssuesCount: kotlin.Int?
+    val unresolvedIssuesCount: kotlin.Int? = null,
     @get:JsonProperty("previousSprint")
-    val previousSprint: Sprint?
+    val previousSprint: Sprint? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

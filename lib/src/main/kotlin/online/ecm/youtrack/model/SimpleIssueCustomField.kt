@@ -49,5 +49,5 @@ open class SimpleIssueCustomField (
     @field:JsonProperty("value")
     open val `value`: kotlin.Any? = null
 
-) : IssueCustomField
+) : IssueCustomField(id, dollarType)
 

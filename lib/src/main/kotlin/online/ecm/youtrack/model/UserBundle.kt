@@ -58,5 +58,5 @@ data class UserBundle (
     @field:JsonProperty("aggregatedUsers")
     val aggregatedUsers: kotlin.collections.List<User>? = null
 
-) : Bundle
+) : Bundle(isUpdateable, id, dollarType)
 

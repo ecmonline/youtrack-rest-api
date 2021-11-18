@@ -50,5 +50,5 @@ data class LimitedVisibility (
     @field:JsonProperty("permittedUsers")
     val permittedUsers: kotlin.collections.List<User>? = null
 
-) : Visibility
+) : Visibility(id, dollarType)
 

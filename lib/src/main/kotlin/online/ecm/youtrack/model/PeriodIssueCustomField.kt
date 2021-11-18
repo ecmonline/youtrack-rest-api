@@ -45,5 +45,5 @@ data class PeriodIssueCustomField (
     @field:JsonProperty("value")
     val `value`: PeriodValue? = null
 
-) : IssueCustomField
+) : IssueCustomField(id, dollarType)
 

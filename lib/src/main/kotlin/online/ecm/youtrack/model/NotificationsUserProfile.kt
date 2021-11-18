@@ -45,33 +45,33 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface NotificationsUserProfile {
+open class NotificationsUserProfile (
 
     @get:JsonProperty("notifyOnOwnChanges")
-    val notifyOnOwnChanges: kotlin.Boolean?
+    val notifyOnOwnChanges: kotlin.Boolean? = null,
     @get:JsonProperty("jabberNotificationsEnabled")
-    val jabberNotificationsEnabled: kotlin.Boolean?
+    val jabberNotificationsEnabled: kotlin.Boolean? = null,
     @get:JsonProperty("emailNotificationsEnabled")
-    val emailNotificationsEnabled: kotlin.Boolean?
+    val emailNotificationsEnabled: kotlin.Boolean? = null,
     @get:JsonProperty("mentionNotificationsEnabled")
-    val mentionNotificationsEnabled: kotlin.Boolean?
+    val mentionNotificationsEnabled: kotlin.Boolean? = null,
     @get:JsonProperty("duplicateClusterNotificationsEnabled")
-    val duplicateClusterNotificationsEnabled: kotlin.Boolean?
+    val duplicateClusterNotificationsEnabled: kotlin.Boolean? = null,
     @get:JsonProperty("mailboxIntegrationNotificationsEnabled")
-    val mailboxIntegrationNotificationsEnabled: kotlin.Boolean?
+    val mailboxIntegrationNotificationsEnabled: kotlin.Boolean? = null,
     @get:JsonProperty("usePlainTextEmails")
-    val usePlainTextEmails: kotlin.Boolean?
+    val usePlainTextEmails: kotlin.Boolean? = null,
     @get:JsonProperty("autoWatchOnComment")
-    val autoWatchOnComment: kotlin.Boolean?
+    val autoWatchOnComment: kotlin.Boolean? = null,
     @get:JsonProperty("autoWatchOnCreate")
-    val autoWatchOnCreate: kotlin.Boolean?
+    val autoWatchOnCreate: kotlin.Boolean? = null,
     @get:JsonProperty("autoWatchOnVote")
-    val autoWatchOnVote: kotlin.Boolean?
+    val autoWatchOnVote: kotlin.Boolean? = null,
     @get:JsonProperty("autoWatchOnUpdate")
-    val autoWatchOnUpdate: kotlin.Boolean?
+    val autoWatchOnUpdate: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

@@ -42,21 +42,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface ProjectTimeTrackingSettings {
+open class ProjectTimeTrackingSettings (
 
     @get:JsonProperty("enabled")
-    val enabled: kotlin.Boolean?
+    val enabled: kotlin.Boolean? = null,
     @get:JsonProperty("estimate")
-    val estimate: ProjectCustomField?
+    val estimate: ProjectCustomField? = null,
     @get:JsonProperty("timeSpent")
-    val timeSpent: ProjectCustomField?
+    val timeSpent: ProjectCustomField? = null,
     @get:JsonProperty("workItemTypes")
-    val workItemTypes: kotlin.collections.List<WorkItemType>?
+    val workItemTypes: kotlin.collections.List<WorkItemType>? = null,
     @get:JsonProperty("project")
-    val project: Project?
+    val project: Project? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

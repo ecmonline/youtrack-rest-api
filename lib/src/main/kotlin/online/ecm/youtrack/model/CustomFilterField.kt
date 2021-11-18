@@ -49,5 +49,5 @@ data class CustomFilterField (
     @field:JsonProperty("customField")
     val customField: CustomField? = null
 
-) : FilterField
+) : FilterField(name, id, dollarType)
 

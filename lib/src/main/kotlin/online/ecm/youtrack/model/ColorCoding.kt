@@ -36,11 +36,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = FieldBasedColorCoding::class, name = "FieldBasedColorCoding"),
     JsonSubTypes.Type(value = ProjectBasedColorCoding::class, name = "ProjectBasedColorCoding")
 )
-interface ColorCoding {
+open class ColorCoding (
 
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

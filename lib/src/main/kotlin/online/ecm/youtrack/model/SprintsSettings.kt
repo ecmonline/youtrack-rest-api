@@ -43,25 +43,25 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface SprintsSettings {
+open class SprintsSettings (
 
     @get:JsonProperty("isExplicit")
-    val isExplicit: kotlin.Boolean?
+    val isExplicit: kotlin.Boolean? = null,
     @get:JsonProperty("cardOnSeveralSprints")
-    val cardOnSeveralSprints: kotlin.Boolean?
+    val cardOnSeveralSprints: kotlin.Boolean? = null,
     @get:JsonProperty("defaultSprint")
-    val defaultSprint: Sprint?
+    val defaultSprint: Sprint? = null,
     @get:JsonProperty("disableSprints")
-    val disableSprints: kotlin.Boolean?
+    val disableSprints: kotlin.Boolean? = null,
     @get:JsonProperty("explicitQuery")
-    val explicitQuery: kotlin.String?
+    val explicitQuery: kotlin.String? = null,
     @get:JsonProperty("sprintSyncField")
-    val sprintSyncField: CustomField?
+    val sprintSyncField: CustomField? = null,
     @get:JsonProperty("hideSubtasksOfCards")
-    val hideSubtasksOfCards: kotlin.Boolean?
+    val hideSubtasksOfCards: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

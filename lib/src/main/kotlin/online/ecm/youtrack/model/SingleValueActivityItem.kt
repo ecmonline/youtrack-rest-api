@@ -39,5 +39,5 @@ open class SingleValueActivityItem (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : ActivityItem
+) : ActivityItem(id, dollarType)
 

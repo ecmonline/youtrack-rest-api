@@ -29,7 +29,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes
 import com.fasterxml.jackson.annotation.JsonTypeInfo
 
 /**
- * Represents a user in YouTrack. Please note that the read-only properties of a user account, like              credentials, or email and so on, you can only change in               <a href=\"https://www.jetbrains.com/help/youtrack/devportal/?Hub-REST-API\">Hub REST API</a>.
+ * Represents a user in YouTrack. Please note that the read-only properties of a user account, like              credentials, or email and so on, you can only change in               <a href=\"https://www.jetbrains.com/help/youtrack/devportal/? = null,Hub-REST-API\">Hub REST API</a>.
  *
  * @param login 
  * @param fullName 
@@ -51,35 +51,35 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = Me::class, name = "Me"),
     JsonSubTypes.Type(value = VcsUnresolvedUser::class, name = "VcsUnresolvedUser")
 )
-interface User {
+open class User (
 
     @get:JsonProperty("login")
-    val login: kotlin.String?
+    open val login: kotlin.String? = null,
     @get:JsonProperty("fullName")
-    val fullName: kotlin.String?
+    open val fullName: kotlin.String? = null,
     @get:JsonProperty("email")
-    val email: kotlin.String?
+    open val email: kotlin.String? = null,
     @get:JsonProperty("jabberAccountName")
-    val jabberAccountName: kotlin.String?
+    open val jabberAccountName: kotlin.String? = null,
     @get:JsonProperty("ringId")
-    val ringId: kotlin.String?
+    open val ringId: kotlin.String? = null,
     @get:JsonProperty("guest")
-    val guest: kotlin.Boolean?
+    open val guest: kotlin.Boolean? = null,
     @get:JsonProperty("online")
-    val online: kotlin.Boolean?
+    open val online: kotlin.Boolean? = null,
     @get:JsonProperty("banned")
-    val banned: kotlin.Boolean?
+    open val banned: kotlin.Boolean? = null,
     @get:JsonProperty("tags")
-    val tags: kotlin.collections.List<IssueTag>?
+    open val tags: kotlin.collections.List<IssueTag>? = null,
     @get:JsonProperty("savedQueries")
-    val savedQueries: kotlin.collections.List<SavedQuery>?
+    open val savedQueries: kotlin.collections.List<SavedQuery>? = null,
     @get:JsonProperty("avatarUrl")
-    val avatarUrl: kotlin.String?
+    open val avatarUrl: kotlin.String? = null,
     @get:JsonProperty("profiles")
-    val profiles: UserProfiles?
+    open val profiles: UserProfiles? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

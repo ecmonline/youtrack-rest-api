@@ -90,5 +90,20 @@ data class Me (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : User
+) : User(
+    login,
+    fullName,
+    email,
+    jabberAccountName,
+    ringId,
+    guest,
+    online,
+    banned,
+    tags,
+    savedQueries,
+    avatarUrl,
+    profiles,
+    id,
+    dollarType
+)
 

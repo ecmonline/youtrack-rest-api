@@ -39,21 +39,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface JabberSettings {
+open class JabberSettings (
 
     @get:JsonProperty("isEnabled")
-    val isEnabled: kotlin.Boolean?
+    val isEnabled: kotlin.Boolean? = null,
     @get:JsonProperty("host")
-    val host: kotlin.String?
+    val host: kotlin.String? = null,
     @get:JsonProperty("port")
-    val port: kotlin.Int?
+    val port: kotlin.Int? = null,
     @get:JsonProperty("login")
-    val login: kotlin.String?
+    val login: kotlin.String? = null,
     @get:JsonProperty("serviceName")
-    val serviceName: kotlin.String?
+    val serviceName: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

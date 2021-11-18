@@ -54,5 +54,5 @@ data class AttributeBasedSwimlaneSettings (
     @field:JsonProperty("values")
     val propertyValues: kotlin.collections.List<SwimlaneEntityAttributeValue>? = null
 
-) : SwimlaneSettings
+) : SwimlaneSettings(enabled, id, dollarType)
 

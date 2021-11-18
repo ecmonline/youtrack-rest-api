@@ -43,5 +43,5 @@ data class PredefinedFilterField (
     @field:JsonProperty("\$type")
     override val dollarType: kotlin.String? = null
 
-) : FilterField
+) : FilterField(name, id, dollarType)
 

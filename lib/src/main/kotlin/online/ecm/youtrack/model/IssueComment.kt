@@ -48,31 +48,31 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface IssueComment {
+open class IssueComment (
 
     @get:JsonProperty("text")
-    val text: kotlin.String?
+    val text: kotlin.String? = null,
     @get:JsonProperty("usesMarkdown")
-    val usesMarkdown: kotlin.Boolean?
+    val usesMarkdown: kotlin.Boolean? = null,
     @get:JsonProperty("textPreview")
-    val textPreview: kotlin.String?
+    val textPreview: kotlin.String? = null,
     @get:JsonProperty("created")
-    val created: kotlin.Long?
+    val created: kotlin.Long? = null,
     @get:JsonProperty("updated")
-    val updated: kotlin.Long?
+    val updated: kotlin.Long? = null,
     @get:JsonProperty("author")
-    val author: User?
+    val author: User? = null,
     @get:JsonProperty("issue")
-    val issue: Issue?
+    val issue: Issue? = null,
     @get:JsonProperty("attachments")
-    val attachments: kotlin.collections.List<IssueAttachment>?
+    val attachments: kotlin.collections.List<IssueAttachment>? = null,
     @get:JsonProperty("visibility")
-    val visibility: Visibility?
+    val visibility: Visibility? = null,
     @get:JsonProperty("deleted")
-    val deleted: kotlin.Boolean?
+    val deleted: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

@@ -48,33 +48,33 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface CustomField {
+open class CustomField (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("localizedName")
-    val localizedName: kotlin.String?
+    val localizedName: kotlin.String? = null,
     @get:JsonProperty("fieldType")
-    val fieldType: FieldType?
+    val fieldType: FieldType? = null,
     @get:JsonProperty("isAutoAttached")
-    val isAutoAttached: kotlin.Boolean?
+    val isAutoAttached: kotlin.Boolean? = null,
     @get:JsonProperty("isDisplayedInIssueList")
-    val isDisplayedInIssueList: kotlin.Boolean?
+    val isDisplayedInIssueList: kotlin.Boolean? = null,
     @get:JsonProperty("ordinal")
-    val ordinal: kotlin.Int?
+    val ordinal: kotlin.Int? = null,
     @get:JsonProperty("aliases")
-    val aliases: kotlin.String?
+    val aliases: kotlin.String? = null,
     @get:JsonProperty("fieldDefaults")
-    val fieldDefaults: CustomFieldDefaults?
+    val fieldDefaults: CustomFieldDefaults? = null,
     @get:JsonProperty("hasRunningJob")
-    val hasRunningJob: kotlin.Boolean?
+    val hasRunningJob: kotlin.Boolean? = null,
     @get:JsonProperty("isUpdateable")
-    val isUpdateable: kotlin.Boolean?
+    val isUpdateable: kotlin.Boolean? = null,
     @get:JsonProperty("instances")
-    val instances: kotlin.collections.List<ProjectCustomField>?
+    val instances: kotlin.collections.List<ProjectCustomField>? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

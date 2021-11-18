@@ -45,5 +45,5 @@ data class TextIssueCustomField (
     @field:JsonProperty("value")
     val `value`: TextFieldValue? = null
 
-) : IssueCustomField
+) : IssueCustomField(id, dollarType)
 

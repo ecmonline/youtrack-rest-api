@@ -53,5 +53,5 @@ open class CustomFieldActivityItem (
     @field:JsonProperty("added")
     open val added: kotlin.Any? = null
 
-) : ActivityItem
+) : ActivityItem(id, dollarType)
 

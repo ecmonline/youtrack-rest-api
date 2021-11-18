@@ -62,47 +62,47 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface Agile {
+open class Agile (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    val name: kotlin.String? = null,
     @get:JsonProperty("owner")
-    val owner: User?
+    val owner: User? = null,
     @get:JsonProperty("visibleFor")
-    val visibleFor: UserGroup?
+    val visibleFor: UserGroup? = null,
     @get:JsonProperty("visibleForProjectBased")
-    val visibleForProjectBased: kotlin.Boolean?
+    val visibleForProjectBased: kotlin.Boolean? = null,
     @get:JsonProperty("updateableBy")
-    val updateableBy: UserGroup?
+    val updateableBy: UserGroup? = null,
     @get:JsonProperty("updateableByProjectBased")
-    val updateableByProjectBased: kotlin.Boolean?
+    val updateableByProjectBased: kotlin.Boolean? = null,
     @get:JsonProperty("orphansAtTheTop")
-    val orphansAtTheTop: kotlin.Boolean?
+    val orphansAtTheTop: kotlin.Boolean? = null,
     @get:JsonProperty("hideOrphansSwimlane")
-    val hideOrphansSwimlane: kotlin.Boolean?
+    val hideOrphansSwimlane: kotlin.Boolean? = null,
     @get:JsonProperty("estimationField")
-    val estimationField: CustomField?
+    val estimationField: CustomField? = null,
     @get:JsonProperty("originalEstimationField")
-    val originalEstimationField: CustomField?
+    val originalEstimationField: CustomField? = null,
     @get:JsonProperty("projects")
-    val projects: kotlin.collections.List<Project>?
+    val projects: kotlin.collections.List<Project>? = null,
     @get:JsonProperty("sprints")
-    val sprints: kotlin.collections.List<Sprint>?
+    val sprints: kotlin.collections.List<Sprint>? = null,
     @get:JsonProperty("currentSprint")
-    val currentSprint: Sprint?
+    val currentSprint: Sprint? = null,
     @get:JsonProperty("columnSettings")
-    val columnSettings: ColumnSettings?
+    val columnSettings: ColumnSettings? = null,
     @get:JsonProperty("swimlaneSettings")
-    val swimlaneSettings: SwimlaneSettings?
+    val swimlaneSettings: SwimlaneSettings? = null,
     @get:JsonProperty("sprintsSettings")
-    val sprintsSettings: SprintsSettings?
+    val sprintsSettings: SprintsSettings? = null,
     @get:JsonProperty("colorCoding")
-    val colorCoding: ColorCoding?
+    val colorCoding: ColorCoding? = null,
     @get:JsonProperty("status")
-    val status: AgileStatus?
+    val status: AgileStatus? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

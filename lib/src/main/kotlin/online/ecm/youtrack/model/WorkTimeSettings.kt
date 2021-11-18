@@ -38,19 +38,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface WorkTimeSettings {
+open class WorkTimeSettings (
 
     @get:JsonProperty("minutesADay")
-    val minutesADay: kotlin.Int?
+    val minutesADay: kotlin.Int? = null,
     @get:JsonProperty("workDays")
-    val workDays: kotlin.Int?
+    val workDays: kotlin.Int? = null,
     @get:JsonProperty("firstDayOfWeek")
-    val firstDayOfWeek: kotlin.Int?
+    val firstDayOfWeek: kotlin.Int? = null,
     @get:JsonProperty("daysAWeek")
-    val daysAWeek: kotlin.Int?
+    val daysAWeek: kotlin.Int? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

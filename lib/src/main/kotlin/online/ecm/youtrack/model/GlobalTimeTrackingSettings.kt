@@ -38,15 +38,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface GlobalTimeTrackingSettings {
+open class GlobalTimeTrackingSettings (
 
     @get:JsonProperty("workItemTypes")
-    val workItemTypes: kotlin.collections.List<WorkItemType>?
+    val workItemTypes: kotlin.collections.List<WorkItemType>? = null,
     @get:JsonProperty("workTimeSettings")
-    val workTimeSettings: WorkTimeSettings?
+    val workTimeSettings: WorkTimeSettings? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

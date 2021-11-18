@@ -44,39 +44,29 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface EmailSettings {
+open class EmailSettings (
 
     @get:JsonProperty("isEnabled")
-    val isEnabled: kotlin.Boolean?
+    val isEnabled: kotlin.Boolean? = null,
     @get:JsonProperty("host")
-    val host: kotlin.String?
+    val host: kotlin.String? = null,
     @get:JsonProperty("port")
-    val port: kotlin.Int?
+    val port: kotlin.Int? = null,
     @get:JsonProperty("mailProtocol")
-    val mailProtocol: EmailSettings.MailProtocol?
+    val mailProtocol: MailProtocol? = null,
     @get:JsonProperty("anonymous")
-    val anonymous: kotlin.Boolean?
+    val anonymous: kotlin.Boolean? = null,
     @get:JsonProperty("login")
-    val login: kotlin.String?
+    val login: kotlin.String? = null,
     @get:JsonProperty("sslKey")
-    val sslKey: StorageEntry?
+    val sslKey: StorageEntry? = null,
     @get:JsonProperty("from")
-    val from: kotlin.String?
+    val from: kotlin.String? = null,
     @get:JsonProperty("replyTo")
-    val replyTo: kotlin.String?
+    val replyTo: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-    /**
-     * 
-     *
-     * Values: sMTP,sMTPS,sMTPTLS
-     */
-    enum class MailProtocol(val value: kotlin.String) {
-        @JsonProperty(value = "SMTP") sMTP("SMTP"),
-        @JsonProperty(value = "SMTPS") sMTPS("SMTPS"),
-        @JsonProperty(value = "SMTP_TLS") sMTPTLS("SMTP_TLS");
-    }
-}
+    val dollarType: kotlin.String? = null
+)
 

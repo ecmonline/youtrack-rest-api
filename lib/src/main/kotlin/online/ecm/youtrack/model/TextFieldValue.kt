@@ -36,15 +36,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface TextFieldValue {
+open class TextFieldValue (
 
     @get:JsonProperty("text")
-    val text: kotlin.String?
+    val text: kotlin.String? = null,
     @get:JsonProperty("markdownText")
-    val markdownText: kotlin.String?
+    val markdownText: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

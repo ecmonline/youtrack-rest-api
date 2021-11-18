@@ -58,5 +58,5 @@ open class WatchFolder (
     @field:JsonProperty("updateableBy")
     open val updateableBy: UserGroup? = null
 
-) : IssueFolder
+) : IssueFolder(name, id, dollarType)
 

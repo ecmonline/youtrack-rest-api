@@ -48,23 +48,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = StateBundleElement::class, name = "StateBundleElement"),
     JsonSubTypes.Type(value = VersionBundleElement::class, name = "VersionBundleElement")
 )
-interface BundleElement {
+open class BundleElement (
 
     @get:JsonProperty("name")
-    val name: kotlin.String?
+    open val name: kotlin.String? = null,
     @get:JsonProperty("bundle")
-    val bundle: Bundle?
+    open val bundle: Bundle? = null,
     @get:JsonProperty("description")
-    val description: kotlin.String?
+    open val description: kotlin.String? = null,
     @get:JsonProperty("ordinal")
-    val ordinal: kotlin.Int?
+    open val ordinal: kotlin.Int? = null,
     @get:JsonProperty("color")
-    val color: FieldStyle?
+    open val color: FieldStyle? = null,
     @get:JsonProperty("hasRunningJob")
-    val hasRunningJob: kotlin.Boolean?
+    open val hasRunningJob: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

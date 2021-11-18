@@ -45,5 +45,5 @@ data class ProjectBasedColorCoding (
     @field:JsonProperty("projectColors")
     val projectColors: kotlin.collections.List<ProjectColor>? = null
 
-) : ColorCoding
+) : ColorCoding(id, dollarType)
 

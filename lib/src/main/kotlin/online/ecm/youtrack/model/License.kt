@@ -37,17 +37,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface License {
+open class License (
 
     @get:JsonProperty("username")
-    val username: kotlin.String?
+    val username: kotlin.String? = null,
     @get:JsonProperty("license")
-    val license: kotlin.String?
+    val license: kotlin.String? = null,
     @get:JsonProperty("error")
-    val error: kotlin.String?
+    val error: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

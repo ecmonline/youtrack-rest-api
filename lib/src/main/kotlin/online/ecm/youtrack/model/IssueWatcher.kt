@@ -39,17 +39,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface IssueWatcher {
+open class IssueWatcher (
 
     @get:JsonProperty("user")
-    val user: User?
+    val user: User? = null,
     @get:JsonProperty("issue")
-    val issue: Issue?
+    val issue: Issue? = null,
     @get:JsonProperty("isStarred")
-    val isStarred: kotlin.Boolean?
+    val isStarred: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

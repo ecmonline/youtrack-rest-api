@@ -46,19 +46,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = UserCustomFieldDefaults::class, name = "UserCustomFieldDefaults"),
     JsonSubTypes.Type(value = VersionBundleCustomFieldDefaults::class, name = "VersionBundleCustomFieldDefaults")
 )
-interface CustomFieldDefaults {
+open class CustomFieldDefaults (
 
     @get:JsonProperty("canBeEmpty")
-    val canBeEmpty: kotlin.Boolean?
+    open val canBeEmpty: kotlin.Boolean? = null,
     @get:JsonProperty("emptyFieldText")
-    val emptyFieldText: kotlin.String?
+    open val emptyFieldText: kotlin.String? = null,
     @get:JsonProperty("isPublic")
-    val isPublic: kotlin.Boolean?
+    open val isPublic: kotlin.Boolean? = null,
     @get:JsonProperty("parent")
-    val parent: CustomField?
+    open val parent: CustomField? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

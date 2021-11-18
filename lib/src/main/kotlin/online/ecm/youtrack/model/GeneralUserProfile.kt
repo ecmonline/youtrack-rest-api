@@ -40,17 +40,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface GeneralUserProfile {
+open class GeneralUserProfile (
 
     @get:JsonProperty("dateFieldFormat")
-    val dateFieldFormat: DateFormatDescriptor?
+    val dateFieldFormat: DateFormatDescriptor? = null,
     @get:JsonProperty("timezone")
-    val timezone: TimeZoneDescriptor?
+    val timezone: TimeZoneDescriptor? = null,
     @get:JsonProperty("locale")
-    val locale: LocaleDescriptor?
+    val locale: LocaleDescriptor? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

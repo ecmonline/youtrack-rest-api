@@ -38,15 +38,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface DuplicateVote {
+open class DuplicateVote (
 
     @get:JsonProperty("issue")
-    val issue: Issue?
+    val issue: Issue? = null,
     @get:JsonProperty("user")
-    val user: User?
+    val user: User? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

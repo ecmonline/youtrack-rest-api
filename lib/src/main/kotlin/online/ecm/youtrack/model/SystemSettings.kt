@@ -40,23 +40,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface SystemSettings {
+open class SystemSettings (
 
     @get:JsonProperty("baseUrl")
-    val baseUrl: kotlin.String?
+    val baseUrl: kotlin.String? = null,
     @get:JsonProperty("maxUploadFileSize")
-    val maxUploadFileSize: kotlin.Long?
+    val maxUploadFileSize: kotlin.Long? = null,
     @get:JsonProperty("maxExportItems")
-    val maxExportItems: kotlin.Int?
+    val maxExportItems: kotlin.Int? = null,
     @get:JsonProperty("administratorEmail")
-    val administratorEmail: kotlin.String?
+    val administratorEmail: kotlin.String? = null,
     @get:JsonProperty("allowStatisticsCollection")
-    val allowStatisticsCollection: kotlin.Boolean?
+    val allowStatisticsCollection: kotlin.Boolean? = null,
     @get:JsonProperty("isApplicationReadOnly")
-    val isApplicationReadOnly: kotlin.Boolean?
+    val isApplicationReadOnly: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

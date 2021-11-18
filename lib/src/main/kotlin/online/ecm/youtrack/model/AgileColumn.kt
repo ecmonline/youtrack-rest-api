@@ -43,23 +43,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface AgileColumn {
+open class AgileColumn (
 
     @get:JsonProperty("presentation")
-    val presentation: kotlin.String?
+    val presentation: kotlin.String? = null,
     @get:JsonProperty("isResolved")
-    val isResolved: kotlin.Boolean?
+    val isResolved: kotlin.Boolean? = null,
     @get:JsonProperty("ordinal")
-    val ordinal: kotlin.Int?
+    val ordinal: kotlin.Int? = null,
     @get:JsonProperty("parent")
-    val parent: ColumnSettings?
+    val parent: ColumnSettings? = null,
     @get:JsonProperty("wipLimit")
-    val wipLimit: WIPLimit?
+    val wipLimit: WIPLimit? = null,
     @get:JsonProperty("fieldValues")
-    val fieldValues: kotlin.collections.List<AgileColumnFieldValue>?
+    val fieldValues: kotlin.collections.List<AgileColumnFieldValue>? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

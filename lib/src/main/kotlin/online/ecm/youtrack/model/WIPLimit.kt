@@ -38,17 +38,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface WIPLimit {
+open class WIPLimit (
 
     @get:JsonProperty("max")
-    val max: kotlin.Int?
+    val max: kotlin.Int? = null,
     @get:JsonProperty("min")
-    val min: kotlin.Int?
+    val min: kotlin.Int? = null,
     @get:JsonProperty("column")
-    val column: AgileColumn?
+    val column: AgileColumn? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

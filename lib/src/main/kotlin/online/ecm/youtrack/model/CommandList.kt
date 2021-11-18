@@ -48,31 +48,31 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface CommandList {
+open class CommandList (
 
     @get:JsonProperty("comment")
-    val comment: kotlin.String?
+    val comment: kotlin.String? = null,
     @get:JsonProperty("visibility")
-    val visibility: CommandVisibility?
+    val visibility: CommandVisibility? = null,
     @get:JsonProperty("query")
-    val query: kotlin.String?
+    val query: kotlin.String? = null,
     @get:JsonProperty("caret")
-    val caret: kotlin.Int?
+    val caret: kotlin.Int? = null,
     @get:JsonProperty("silent")
-    val silent: kotlin.Boolean?
+    val silent: kotlin.Boolean? = null,
     @get:JsonProperty("usesMarkdown")
-    val usesMarkdown: kotlin.Boolean?
+    val usesMarkdown: kotlin.Boolean? = null,
     @get:JsonProperty("runAs")
-    val runAs: kotlin.String?
+    val runAs: kotlin.String? = null,
     @get:JsonProperty("commands")
-    val commands: kotlin.collections.List<ParsedCommand>?
+    val commands: kotlin.collections.List<ParsedCommand>? = null,
     @get:JsonProperty("issues")
-    val issues: kotlin.collections.List<Issue>?
+    val issues: kotlin.collections.List<Issue>? = null,
     @get:JsonProperty("suggestions")
-    val suggestions: kotlin.collections.List<Suggestion>?
+    val suggestions: kotlin.collections.List<Suggestion>? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

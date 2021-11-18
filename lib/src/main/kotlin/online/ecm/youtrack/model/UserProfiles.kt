@@ -40,17 +40,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface UserProfiles {
+open class UserProfiles (
 
     @get:JsonProperty("general")
-    val general: GeneralUserProfile?
+    val general: GeneralUserProfile? = null,
     @get:JsonProperty("notifications")
-    val notifications: NotificationsUserProfile?
+    val notifications: NotificationsUserProfile? = null,
     @get:JsonProperty("timetracking")
-    val timetracking: TimeTrackingUserProfile?
+    val timetracking: TimeTrackingUserProfile? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

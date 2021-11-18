@@ -44,36 +44,27 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface DatabaseBackupSettings {
+open class DatabaseBackupSettings (
 
     @get:JsonProperty("location")
-    val location: kotlin.String?
+    val location: kotlin.String? = null,
     @get:JsonProperty("filesToKeep")
-    val filesToKeep: kotlin.Int?
+    val filesToKeep: kotlin.Int? = null,
     @get:JsonProperty("cronExpression")
-    val cronExpression: kotlin.String?
+    val cronExpression: kotlin.String? = null,
     @get:JsonProperty("archiveFormat")
-    val archiveFormat: DatabaseBackupSettings.ArchiveFormat?
+    val archiveFormat: ArchiveFormat? = null,
     @get:JsonProperty("isOn")
-    val isOn: kotlin.Boolean?
+    val isOn: kotlin.Boolean? = null,
     @get:JsonProperty("availableDiskSpace")
-    val availableDiskSpace: kotlin.Long?
+    val availableDiskSpace: kotlin.Long? = null,
     @get:JsonProperty("notifiedUsers")
-    val notifiedUsers: kotlin.collections.List<User>?
+    val notifiedUsers: kotlin.collections.List<User>? = null,
     @get:JsonProperty("backupStatus")
-    val backupStatus: BackupStatus?
+    val backupStatus: BackupStatus? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-    /**
-     * 
-     *
-     * Values: tARGZ,zIP
-     */
-    enum class ArchiveFormat(val value: kotlin.String) {
-        @JsonProperty(value = "TAR_GZ") tARGZ("TAR_GZ"),
-        @JsonProperty(value = "ZIP") zIP("ZIP");
-    }
-}
+    val dollarType: kotlin.String? = null
+)
 

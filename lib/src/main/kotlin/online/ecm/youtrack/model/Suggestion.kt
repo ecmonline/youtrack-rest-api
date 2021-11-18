@@ -47,37 +47,37 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface Suggestion {
+open class Suggestion (
 
     @get:JsonProperty("completionStart")
-    val completionStart: kotlin.Int?
+    val completionStart: kotlin.Int? = null,
     @get:JsonProperty("completionEnd")
-    val completionEnd: kotlin.Int?
+    val completionEnd: kotlin.Int? = null,
     @get:JsonProperty("matchingStart")
-    val matchingStart: kotlin.Int?
+    val matchingStart: kotlin.Int? = null,
     @get:JsonProperty("matchingEnd")
-    val matchingEnd: kotlin.Int?
+    val matchingEnd: kotlin.Int? = null,
     @get:JsonProperty("caret")
-    val caret: kotlin.Int?
+    val caret: kotlin.Int? = null,
     @get:JsonProperty("description")
-    val description: kotlin.String?
+    val description: kotlin.String? = null,
     @get:JsonProperty("option")
-    val option: kotlin.String?
+    val option: kotlin.String? = null,
     @get:JsonProperty("prefix")
-    val prefix: kotlin.String?
+    val prefix: kotlin.String? = null,
     @get:JsonProperty("suffix")
-    val suffix: kotlin.String?
+    val suffix: kotlin.String? = null,
     @get:JsonProperty("group")
-    val group: kotlin.String?
+    val group: kotlin.String? = null,
     @get:JsonProperty("icon")
-    val icon: kotlin.String?
+    val icon: kotlin.String? = null,
     @get:JsonProperty("auxiliaryIcon")
-    val auxiliaryIcon: kotlin.String?
+    val auxiliaryIcon: kotlin.String? = null,
     @get:JsonProperty("className")
-    val className: kotlin.String?
+    val className: kotlin.String? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

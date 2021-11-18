@@ -78,5 +78,5 @@ data class VersionBundleElement (
     @field:JsonProperty("released")
     val released: kotlin.Boolean? = null
 
-) : BundleElement
+) : BundleElement(name, bundle, description, ordinal, color, hasRunningJob, id, dollarType)
 

@@ -54,25 +54,25 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = UserProjectCustomField::class, name = "UserProjectCustomField"),
     JsonSubTypes.Type(value = VersionProjectCustomField::class, name = "VersionProjectCustomField")
 )
-interface ProjectCustomField {
+open class ProjectCustomField (
 
     @get:JsonProperty("field")
-    val `field`: CustomField?
+    open val `field`: CustomField? = null,
     @get:JsonProperty("project")
-    val project: Project?
+    open val project: Project? = null,
     @get:JsonProperty("canBeEmpty")
-    val canBeEmpty: kotlin.Boolean?
+    open val canBeEmpty: kotlin.Boolean? = null,
     @get:JsonProperty("emptyFieldText")
-    val emptyFieldText: kotlin.String?
+    open val emptyFieldText: kotlin.String? = null,
     @get:JsonProperty("ordinal")
-    val ordinal: kotlin.Int?
+    open val ordinal: kotlin.Int? = null,
     @get:JsonProperty("isPublic")
-    val isPublic: kotlin.Boolean?
+    open val isPublic: kotlin.Boolean? = null,
     @get:JsonProperty("hasRunningJob")
-    val hasRunningJob: kotlin.Boolean?
+    open val hasRunningJob: kotlin.Boolean? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    open val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    open val dollarType: kotlin.String? = null,
+)
 

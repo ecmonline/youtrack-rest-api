@@ -38,15 +38,15 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface NotificationSettings {
+open class NotificationSettings (
 
     @get:JsonProperty("emailSettings")
-    val emailSettings: EmailSettings?
+    val emailSettings: EmailSettings? = null,
     @get:JsonProperty("jabberSettings")
-    val jabberSettings: JabberSettings?
+    val jabberSettings: JabberSettings? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 

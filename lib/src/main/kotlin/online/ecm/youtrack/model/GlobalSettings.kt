@@ -46,23 +46,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "\$type", visible = true)
 @JsonSubTypes(
 )
-interface GlobalSettings {
+open class GlobalSettings (
 
     @get:JsonProperty("systemSettings")
-    val systemSettings: SystemSettings?
+    val systemSettings: SystemSettings? = null,
     @get:JsonProperty("notificationSettings")
-    val notificationSettings: NotificationSettings?
+    val notificationSettings: NotificationSettings? = null,
     @get:JsonProperty("restSettings")
-    val restSettings: RestCorsSettings?
+    val restSettings: RestCorsSettings? = null,
     @get:JsonProperty("appearanceSettings")
-    val appearanceSettings: AppearanceSettings?
+    val appearanceSettings: AppearanceSettings? = null,
     @get:JsonProperty("localeSettings")
-    val localeSettings: LocaleSettings?
+    val localeSettings: LocaleSettings? = null,
     @get:JsonProperty("license")
-    val license: License?
+    val license: License? = null,
     @get:JsonProperty("id")
-    val id: kotlin.String?
+    val id: kotlin.String? = null,
     @get:JsonProperty("\$type")
-    val dollarType: kotlin.String?
-}
+    val dollarType: kotlin.String? = null,
+)
 
