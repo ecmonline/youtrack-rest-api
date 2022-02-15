@@ -20,6 +20,7 @@
 
 package online.ecm.youtrack.model
 
+import com.fasterxml.jackson.annotation.JsonInclude
 import online.ecm.youtrack.model.Issue
 import online.ecm.youtrack.model.IssueAttachment
 import online.ecm.youtrack.model.User
@@ -55,14 +56,19 @@ open class IssueComment (
     @get:JsonProperty("usesMarkdown")
     val usesMarkdown: kotlin.Boolean? = null,
     @get:JsonProperty("textPreview")
+    @get:JsonInclude(JsonInclude.Include.NON_NULL)
     val textPreview: kotlin.String? = null,
     @get:JsonProperty("created")
+    @get:JsonInclude(JsonInclude.Include.NON_NULL)
     val created: kotlin.Long? = null,
     @get:JsonProperty("updated")
+    @get:JsonInclude(JsonInclude.Include.NON_NULL)
     val updated: kotlin.Long? = null,
     @get:JsonProperty("author")
+    @get:JsonInclude(JsonInclude.Include.NON_NULL)
     val author: User? = null,
     @get:JsonProperty("issue")
+    @get:JsonInclude(JsonInclude.Include.NON_NULL)
     val issue: Issue? = null,
     @get:JsonProperty("attachments")
     val attachments: kotlin.collections.List<IssueAttachment>? = null,
