@@ -15,7 +15,10 @@ import org.apache.http.message.BasicNameValuePair
 import org.apache.http.util.EntityUtils
 import java.nio.charset.StandardCharsets
 
-class YoutrackApi(val youtrackApiConfig: YoutrackApiConfig) : YoutrackApiInterface {
+class YoutrackApi(
+    val youtrackApiConfig: YoutrackApiConfig,
+    val silentUpdates: Boolean = false
+) : YoutrackApiInterface {
 
     companion object {
         private val httpClientBuilder: HttpClientBuilder = HttpClientBuilder.create()
@@ -1095,6 +1098,10 @@ class YoutrackApi(val youtrackApiConfig: YoutrackApiConfig) : YoutrackApiInterfa
         val baseUrl = youtrackApiConfig.baseUrl
         val apiPath = youtrackApiConfig.apiPath
         requestConfig.headers["Authorization"] = "Bearer ${youtrackApiConfig.authToken}"
+
+        if(silentUpdates) {
+            requestConfig.query.put("muteUpdateNotifications", listOf("true"))
+        }
 
         val request = when (requestConfig.method) {
             RequestMethod.GET -> HttpGet(baseUrl)
